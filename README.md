@@ -89,3 +89,12 @@ O sistema deve possuir uma funcionalidade de listagem de médicos, na qual as se
 - JPA/Hibernate: Persistência de dados com suporte a ORM (Mapeamento Objeto-Relacional);
 - Maven: Gerenciamento de dependências e build do projeto;
 - Insomnia: Ferramenta para testar requisições da API.
+
+## Implementações Realizadas
+> Até o momento, foram implementadas as seguintes funcionalidades com base nos requisitos descritos:
+-  Cadastro de Médicos
+    -  O cadastro de médicos foi implementado seguindo os campos obrigatórios: nome, e-mail, telefone, CRM, especialidade e endereço completo (logradouro, número, complemento, bairro, cidade, UF e CEP).
+    -  Foi utilizado o padrão DTO para separar a lógica de recebimento e persistência dos dados, mantendo o código mais organizado e seguindo boas práticas de desenvolvimento.
+    -  A validação dos campos obrigatórios foi garantida com Bean Validation, assegurando que os dados enviados estejam completos e corretos antes de serem salvos.
+    -  A persistência dos dados foi realizada com JPA/Hibernate, utilizando o banco de dados MySQL para armazenar as informações.
+    -  A criação da tabela de médicos foi feita através da primeira migration, implementada com Flyway, garantindo o versionamento do banco de dados e facilitando futuras alterações estruturais.
