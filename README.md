@@ -98,3 +98,8 @@ O sistema deve possuir uma funcionalidade de listagem de médicos, na qual as se
     -  A validação dos campos obrigatórios foi garantida com Bean Validation, assegurando que os dados enviados estejam completos e corretos antes de serem salvos.
     -  A persistência dos dados foi realizada com JPA/Hibernate, utilizando o banco de dados MySQL para armazenar as informações.
     -  A criação da tabela de médicos foi feita através da primeira migration, implementada com Flyway, garantindo o versionamento do banco de dados e facilitando futuras alterações estruturais.
+
+- Listagem de Médicos
+    - A listagem de médicos foi implementada conforme os requisitos especificados.
+    - Um novo DTO foi criado para retornar os dados de forma adequada, exibindo apenas as informações necessárias: nome, e-mail, CRM e especialidade.
+    - Foram aplicadas paginação e ordenação dos resultados utilizando a biblioteca Pageable do Spring Boot, permitindo que a listagem traga 10 registros por página e seja ordenada pelo nome do médico de forma crescente.
