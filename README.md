@@ -104,8 +104,8 @@ O sistema deve possuir uma funcionalidade de listagem de médicos, na qual as se
     -  A criação da tabela de médicos e pacientes foi feita através de migration, implementada com Flyway, garantindo o versionamento do banco de dados e facilitando futuras alterações estruturais.
 
 - Listagem de Médicos e Pacientes
-    - A listagem de médicos foi implementada conforme os requisitos especificados.
-    - Um novo DTO foi criado para retornar os dados de forma adequada, exibindo apenas as informações necessárias: nome, e-mail, CRM e especialidade.
-    - Foram aplicadas paginação e ordenação dos resultados utilizando a biblioteca Pageable do Spring Boot, permitindo que a listagem traga 10 registros por página e seja ordenada pelo nome do médico de forma crescente.
+    - A listagem foi implementada conforme os requisitos especificados.
+    - Um DTO foi criado para retornar os dados de forma adequada, exibindo apenas as informações necessárias.
+    - Foram aplicadas paginação e ordenação dos resultados utilizando a biblioteca Pageable do Spring Boot, permitindo que a listagem traga 10 registros por página e seja ordenada pelo nome de forma crescente.
 
 
