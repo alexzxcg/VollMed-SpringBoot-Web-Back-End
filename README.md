@@ -7,6 +7,9 @@ O sistema permitirá o gerenciamento de médicos, pacientes e consultas, com fun
 - Validações de dados com Bean Validation;
 - Paginação e ordenação de resultados;
 - Aplicação de boas práticas de desenvolvimento utilizando Spring Boot 3 e Java 21 LTS.
+- Tratamento de erros
+- Autenticação/Autorização com Spring Security
+- Tokens JWT
 
 ## Requisitos
 - Cadastro de médicos:
