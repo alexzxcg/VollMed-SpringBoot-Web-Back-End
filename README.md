@@ -32,6 +32,8 @@ O sistema deve possuir uma funcionalidade de listagem de médicos, na qual as se
   - Telefone
   - Endereço
 
+- O sistema deve possuir uma funcionalidade que permita a exclusão de médicos cadastrados.
+
 - Cadastro de pacientes: O sistema deve possuir uma funcionalidade de cadastro de pacientes, na qual as seguintes informações deverão ser preenchidas.
   - Nome
   - E-mail
@@ -50,7 +52,7 @@ O sistema deve possuir uma funcionalidade de listagem de médicos, na qual as se
   - Nome
   - Telefone
   - Endereço
-
+  
 - Exclusão de pacientes: O sistema deve possuir uma funcionalidade que permita a exclusão de pacientes cadastrados.
 
 - Agendamento de consultas: O sistema deve possuir uma funcionalidade que permita o agendamento de consultas, na qual as seguintes informações deverão ser preenchidas.
@@ -68,6 +70,7 @@ O sistema deve possuir uma funcionalidade de listagem de médicos, na qual as se
   - Não permitir a alteração da Especialidade do médico.
   - Não permitir a alteração do e-mail do paciente;
   - Não permitir a alteração do CPF do paciente.
+  - A exclusão não deve apagar os dados do médico, mas torná-lo como "inativo" no sistema.
   - A exclusão não deve apagar os dados do paciente, mas torná-lo como "inativo" no sistema.
   - O horário de funcionamento da clínica é de segunda a sábado, das 07:00 às 19:00;
   - As consultas tem duração fixa de 1 hora;
@@ -92,14 +95,17 @@ O sistema deve possuir uma funcionalidade de listagem de médicos, na qual as se
 
 ## Implementações Realizadas
 > Até o momento, foram implementadas as seguintes funcionalidades com base nos requisitos descritos:
--  Cadastro de Médicos
-    -  O cadastro de médicos foi implementado seguindo os campos obrigatórios: nome, e-mail, telefone, CRM, especialidade e endereço completo (logradouro, número, complemento, bairro, cidade, UF e CEP).
-    -  Foi utilizado o padrão DTO para separar a lógica de recebimento e persistência dos dados, mantendo o código mais organizado e seguindo boas práticas de desenvolvimento.
-    -  A validação dos campos obrigatórios foi garantida com Bean Validation, assegurando que os dados enviados estejam completos e corretos antes de serem salvos.
-    -  A persistência dos dados foi realizada com JPA/Hibernate, utilizando o banco de dados MySQL para armazenar as informações.
-    -  A criação da tabela de médicos foi feita através da primeira migration, implementada com Flyway, garantindo o versionamento do banco de dados e facilitando futuras alterações estruturais.
+-  CRUD de Médicos e Pacientes
+    - O CRUD foi implementado de forma completa, seguindo os requisitos especificados. O sistema permite o cadastro, listagem, atualização e exclusão dos registros de medicos e pacientes.
+    - As validações de campos obrigatórios foram realizadas com Bean Validation, garantindo a integridade dos dados.
+    - O padrão DTO foi utilizado para receber e devolver as informações, mantendo a separação da lógica de negócio.
+    - A persistência dos dados foi realizada utilizando JPA/Hibernate, com o banco de dados MySQL como base de dados.
+    - A exclusão segue a regra de negócio estabelecida, que torna o medico/paciente inativo no sistema, ao invés de removê-lo completamente.
+    -  A criação da tabela de médicos e pacientes foi feita através de migration, implementada com Flyway, garantindo o versionamento do banco de dados e facilitando futuras alterações estruturais.
 
-- Listagem de Médicos
+- Listagem de Médicos e Pacientes
     - A listagem de médicos foi implementada conforme os requisitos especificados.
     - Um novo DTO foi criado para retornar os dados de forma adequada, exibindo apenas as informações necessárias: nome, e-mail, CRM e especialidade.
     - Foram aplicadas paginação e ordenação dos resultados utilizando a biblioteca Pageable do Spring Boot, permitindo que a listagem traga 10 registros por página e seja ordenada pelo nome do médico de forma crescente.
+
+
