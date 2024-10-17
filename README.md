@@ -111,4 +111,10 @@ O sistema deve possuir uma funcionalidade de listagem de médicos, na qual as se
     - Um DTO foi criado para retornar os dados de forma adequada, exibindo apenas as informações necessárias.
     - Foram aplicadas paginação e ordenação dos resultados utilizando a biblioteca Pageable do Spring Boot, permitindo que a listagem traga 10 registros por página e seja ordenada pelo nome de forma crescente.
 
+- Tratamento de Respostas HTTP
+    - As controllers foram ajustadas para garantir que as respostas estejam de acordo com o protocolo HTTP
+    - 201 Created: Métodos de criação retornam este status, juntamente com o cabeçalho Location contendo a URL do recurso recém-criado.
+    - 200 OK: Retornado para atualizações bem-sucedidas, com o corpo da resposta contendo os dados atualizados.
+    - 204 No Content: Retornado para operações de exclusão lógica bem-sucedida. 
+
 
