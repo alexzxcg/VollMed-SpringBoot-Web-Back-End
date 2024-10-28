@@ -119,4 +119,9 @@ O sistema deve possuir uma funcionalidade de listagem de médicos, na qual as se
     - 404 Not Found
     - 400 Method Argument Not Valid
 
+- Geração, Validação e Autenticação de Tokens JWT
+    - Implementado gerador e validador de tokens JWT utilizando Auth0 e Spring Security.
+    - O sistema agora realiza a autenticação e controle de acesso baseado em tokens JWT para login.
+    - Spring Security foi configurado para proteger rotas e restringir acesso a usuários não autenticados.
+    - O uso de JWT garante que cada requisição autentique o usuário com um token válido e assinado, proporcionando uma camada adicional de segurança na API.
 
