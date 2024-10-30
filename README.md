@@ -99,6 +99,9 @@ O sistema deve possuir uma funcionalidade de listagem de médicos, na qual as se
 - JPA/Hibernate: Persistência de dados com suporte a ORM (Mapeamento Objeto-Relacional);
 - Maven: Gerenciamento de dependências e build do projeto;
 - Insomnia: Ferramenta para testar requisições da API.
+- JUnit: Framework para realização de testes automatizados e unitários, garantindo a qualidade e integridade do código.
+- Spring Security: Implementação de autenticação e autorização com tokens JWT.
+- Spring Docs: Utilizado para gerar a documentação da API em tempo real, integrando com Swagger para fácil visualização e teste das rotas.
 
 ## Implementações Realizadas
 > Até o momento, foram implementadas as seguintes funcionalidades com base nos requisitos descritos:
@@ -115,6 +118,15 @@ O sistema deve possuir uma funcionalidade de listagem de médicos, na qual as se
     - Um DTO foi criado para retornar os dados de forma adequada, exibindo apenas as informações necessárias.
     - Foram aplicadas paginação e ordenação dos resultados utilizando a biblioteca Pageable do Spring Boot, permitindo que a listagem traga 10 registros por página e seja ordenada pelo nome de forma crescente.
 
+- Agendamento e Cancelamento de Consultas
+    - Lógica de agendamento e cancelamento: Implementada conforme os requisitos e regras de negócio estabelecidas.
+    - Aplicação dos princípios SOLID:
+        - S (Single Responsibility Principle): Cada classe tem uma única responsabilidade, com uma validação específica por classe.
+        - O (Open/Closed Principle): As classes de validação foram projetadas para serem abertas para extensão e fechadas para modificação.
+        - D (Dependency Inversion Principle): Utilização de uma interface que representa o método de validação, promovendo flexibilidade e desacoplamento entre as implementações.
+    - Validações separadas em classes distintas: Cada classe é responsável por validar uma regra de negócio específica, garantindo clareza e facilidade de manutenção.
+    - Interface para validações: Foi criada uma interface para representar o método de validação, facilitando a implementação das diferentes regras para agendamento e cancelamento.
+
 - Tratamento de Respostas HTTP
     - As controllers foram ajustadas para garantir que as respostas estejam de acordo com o protocolo HTTP
     - 201 Created: Métodos de criação retornam este status, juntamente com o cabeçalho Location contendo a URL do recurso recém-criado.
@@ -128,4 +140,9 @@ O sistema deve possuir uma funcionalidade de listagem de médicos, na qual as se
     - O sistema agora realiza a autenticação e controle de acesso baseado em tokens JWT para login.
     - Spring Security foi configurado para proteger rotas e restringir acesso a usuários não autenticados.
     - O uso de JWT garante que cada requisição autentique o usuário com um token válido e assinado, proporcionando uma camada adicional de segurança na API.
+      
+- Testes Automatizados
+    - JUnit e Mockito: Implementados para garantir a qualidade e funcionamento correto do sistema.
+    - Testes na Controller: Simulação de chamadas à classe Controller que delega o agendamento de consultas para o Service.
+    - Testes no Médico Repository: Verificação do método responsável por escolher aleatoriamente um médico disponível na data agendada, caso haja algum médico livre.
 
